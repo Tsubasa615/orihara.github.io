@@ -1,5 +1,39 @@
 const posts = [
   {
+    "slug": "international-economics",
+    "date": "2026-09-06",
+    "dateLabel": "06 Sept 2026",
+    "tags": [
+      "Learning",
+      "Economics"
+    ],
+    "title": "International Economics",
+    "summary": "经济学",
+    "cover": "one",
+    "content": [
+      {
+        "type": "heading",
+        "text": "QAQ"
+      },
+      {
+        "type": "p",
+        "text": "好难呀"
+      },
+      {
+        "type": "p",
+        "text": "学习太难了，github也太难了呜呜"
+      },
+      {
+        "type": "heading",
+        "text": "喵喵喵，好好学习，天天向上"
+      },
+      {
+        "type": "p",
+        "text": "谢谢我的好朋友"
+      }
+    ]
+  },
+  {
     "slug": "starting-point-no-turning-back-please",
     "date": "2026-09-02",
     "dateLabel": "02 Sept 2026",
