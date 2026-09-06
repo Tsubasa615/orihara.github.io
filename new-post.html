@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple helper for writing a new Pedas Terasi blog post.">
+  <title>Post Maker — Pedas Terasi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="maker-page">
+  <header class="site-header"><div class="shell header-inner"><a class="brand" href="./"><span class="brand-mark">PT</span><span>Pedas Terasi</span></a><nav class="site-nav" aria-label="Main navigation"><a href="./">Home</a><a href="./#notes">All notes</a><a href="new-post.html" aria-current="page">Post maker</a></nav></div></header>
+  <main class="shell maker-shell">
+    <section class="maker-intro"><p class="eyebrow">Post maker</p><h1>Write a new note.</h1><p>Add, edit, or remove notes here. When you are done, download the updated <code>posts-data.js</code> file and replace the one in your project.</p></section>
+    <div class="maker-layout">
+      <form class="maker-form" data-post-form>
+        <div class="post-picker-row"><label>Open a previous post to edit<select data-post-picker><option value="">New post</option></select></label><button class="delete-current-button" type="button" data-delete-current hidden>Delete selected post</button></div>
+        <div class="form-row"><label>Title<input name="title" required placeholder="What I learned from..." autocomplete="off"></label><label>Date<input name="date" type="date" required></label></div>
+        <label>Short summary<textarea name="summary" required rows="3" placeholder="A short sentence shown on the post card."></textarea></label>
+        <div class="form-row"><label>Tags <small>Separate with commas</small><input name="tags" placeholder="Game dev, Unity, Learning"></label><label>Illustrated cover<select name="cover"><option value="one">Cover one</option><option value="two">Cover two</option><option value="three">Cover three</option><option value="four">Cover four</option></select></label></div>
+        <details class="optional-fields"><summary>Optional post-card image</summary><div class="details-content"><label>Image path<input name="image" placeholder="images/my-game.jpg"></label><label>Image description<input name="imageAlt" placeholder="A small character in a forest"></label></div></details>
+        <label>Your note <small>Leave a blank line between blocks. Use <code># </code> for a heading, <code>&gt; </code> for a quote, or use the image / link / Unity formats shown below.</small><textarea name="body" required rows="17" placeholder="Write your first paragraph here.&#10;&#10;[image: ../images/my-game.jpg | A scene from my game | An early forest test]&#10;&#10;# A small heading&#10;&#10;[link: See the project page | https://example.com]&#10;&#10;[unity: ../games/my-first-game/index.html | My first playable game | Use arrow keys to move.]&#10;&#10;Write another paragraph here."></textarea></label><div class="body-block-help"><strong>Put these anywhere in your note:</strong><code>[image: path | description | optional caption]</code><code>[link: label | https://url]</code><code>[unity: path | title | optional caption]</code></div>
+
+        <div class="maker-actions"><button class="generate-button" type="submit" data-save-post>Add post to top <span>↑</span></button><button type="button" class="build-button" data-build>Build static HTML</button><button class="cancel-button" type="button" data-cancel-edit hidden>Cancel editing</button></div>
+      </form>
+      <section class="manage-posts" aria-labelledby="manage-title">
+        <div class="manage-heading"><div><p class="eyebrow">Your notes</p><h2 id="manage-title">Edit your post list</h2></div><button type="button" class="reset-button" data-reset>Reset to published posts</button></div>
+        <div data-manage-list></div>
+      </section>
+      <aside class="maker-output"><div class="output-heading"><div><p class="eyebrow">Your updated posts</p><p>Download this when you are finished.</p></div><div class="output-buttons"><button type="button" class="copy-button" data-copy>Copy</button><button type="button" class="download-button" data-download>Download data</button></div></div><textarea data-output readonly aria-label="Updated posts data"></textarea><p class="copy-note" data-copy-note></p><p class="build-note">Build static HTML will ask you to select your local website folder, then create the homepage and individual post pages there.</p></aside>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="shell footer-inner"><p>Pedas Terasi</p><p>Made slowly, with curiosity. © 2026</p></div></footer>
+  <script src="posts-data.js"></script><script src="post-generator.js"></script>
+</body>
+</html>
